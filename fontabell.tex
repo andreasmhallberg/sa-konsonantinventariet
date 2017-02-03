@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+    \usepackage{rotating}
+    \usepackage{array}
+    \usepackage{multirow}
+    \usepackage{polyglossia}
+    \usepackage[hmargin=2cm, vmargin=2cm, landscape]{geometry}
+    \setmainlanguage{swedish}
+    \setotherlanguage{arabic}
+    \setmainfont{Linux Libertine O}
+    \newfontfamily\arabicfont[Script=Arabic]{Amiri}
+    \usepackage{booktabs}
+
+    \newcommand{\fon}[4][.5em]{\makebox[#1]{#4}~\textarabic{#3}}
+
+    \setlength\parindent{0pt}
+    \pagestyle{empty}
+
+    \newcolumntype{F}{>{\hspace{1em}}l}
+
+
+\newcommand\dothetable{
+\LARGE
+    \centering
+    \begin{tabular}{@{}lFF@{\,}FF@{\,}FFFFFF@{}}
+                                &
+        \multicolumn{1}{c}{\scshape labial}     &
+\multicolumn{2}{c}{\scshape dental} &
+\multicolumn{2}{c}{\scshape alveolar}      &
+\multicolumn{1}{c}{\scshape palatal}      &
+    \multicolumn{1}{c}{\scshape velar/}       &
+\multicolumn{1}{c}{\scshape faryngal}    &
+\multicolumn{1}{c}{\scshape glottal}\\
+             &
+\multicolumn{1}{c}{} &
+    \multicolumn{1}{c}{\itshape--emf.}   &
+    \multicolumn{1}{c}{\itshape+emf.}   &
+    \multicolumn{1}{c}{\itshape--emf.}   &
+    \multicolumn{1}{c}{\itshape+emf.}   &&
+    \multicolumn{1}{c}{\scshape uvular}     
+            &
+            &
+\\
+
+
+        \rowcolor{gray!25}
+        \textbf{klusil}    &               &               &                    &               &              &                 &               &              & \\
+        \rowcolor{gray!25}
+        ~~tonlös           & \fon{p}{}{}   &               &                    & \fon[.4em]{t}{ت}{t} & \fon{}{ط}{T} & \fon{k}{ك}{k}   & \fon{}{ق}{q}  &              & \fon{}{ء}{ʾ}\\
+        \rowcolor{gray!25}
+        ~~tonande          & \fon{b}{ب}{b} &               &                    & \fon{d}{د}{d} & \fon{}{ض}{D} & \fon{g}{}{}     &               &              & \\
+        \textbf{frikativ}  &               &               &                    &               &              &                 &               &              & \\
+        ~~tonlös                   & \fon{f}{ف}{f} & \fon{}{ث}{th} &                    & \fon{s}{س}{s} & \fon{}{ص}{S} & \fon{sj}{ش}{sh} & \fon[.7em]{}{خ}{kh} & \fon{}{ح}{H} & \fon{h}{ه}{h}\\
+        ~~tonande                  & \fon{v}{}{}   & \fon[.7em]{}{ذ}{dh} & \fon[1em]{}{ظ}{DH} & \fon{}{ز}{z}  &              &                 & \fon[.7em]{}{غ}{gh} & \fon{}{ع}{ʿ} & \\
+        \rowcolor{gray!25}
+        affrikata          &               &               &                    &               &              & \fon{}{ج}{j}    &               &              & \\
+        lateral            &               &               &                    & \fon{l}{ل}{l} &              &                 &               &              & \\
+        \rowcolor{gray!25}
+        vibrant            &               &               &                    & \fon{r}{ر}{r} &              &                 &               &              & \\
+        nasal              & \fon{m}{م}{m} &               &                    & \fon{n}{ن}{n} &              &    \fon{ng}{}{}             &               &              & \\
+        \rowcolor{gray!25}
+        halvvokal          & \fon{}{و}{w}  &               &                    &               &              & \fon{j}{ي}{y}   &               &              & \\
+\end{tabular}
+}
+
+    \begin{document}
+
+    \begin{minipage}{.7\linewidth}
+        \textit{\huge Det standardarabiska konsonatinventariet}\\
+
+      \smallskip
+       \normalsize
+       Tabellen bygger på \textit{A Refence Grammar of Modern Standard Arabic}  (Ryding 2005, Cambridge University Press) med förenklad transkription enligt \textit{Alif Baa} (Brustad, Al-Batal \& Al-Tonsi 2010, Georgetown University Press).
+       
+       \smallskip
+       \textcolor{red}{Röda tecken} på nästa sida anger det svenska konsonantinventariet.
+   \end{minipage}
+
+\vfill
+
+\dothetable
+
+\vfill\vfill\null
+\center
+\begin{minipage}{8cm}
+\center
+\tiny
+Av Andras Hallberg.
+Detta verk är licensierat under en Creative Commons Erkännande 4.0 Internationell Licens.
+Det kan laddas ner från \url{http://andreasmhallberg.github.io/}.
+\end{minipage}
+\vspace{-1cm}
+
+\clearpage
+
+    % show swe
+\renewcommand{\fon}[4][.5em]{\textcolor{red}{\llap{\rlap{#2}\hspace{1em}}}\makebox[#1]{#4}~\textarabic{#3}}
+\null\vfill
+\dothetable
+\vfill\vfill\null
+
+    \end{document}
