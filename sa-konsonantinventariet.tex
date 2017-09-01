@@ -21,8 +21,27 @@
 
     \newcolumntype{F}{>{\hspace{1em}}l}
 
+    % Nästa sida/\null
+    \newcommand{\rodref}{ på nästa sida}
 
 \newcommand\dothetable{
+    \raggedright
+
+        \textit{\huge Det standardarabiska konsonatinventariet}\\
+
+      \bigskip
+
+       \normalsize
+    \begin{minipage}{.7\linewidth}
+       Tabellen bygger på \textit{A Refence Grammar of Modern Standard Arabic}  (Ryding 2005, Cambridge University Press) med förenklad transkription enligt \textit{Alif Baa} (Brustad, Al-Batal \& Al-Tonsi 2010, Georgetown University Press).
+       
+       \smallskip
+       \textcolor{red}{Röda tecken}\rodref{} anger det svenska konsonantinventariet.
+   \end{minipage}
+
+\vfill
+
+
 \LARGE
     \centering
     \begin{tabular}{@{}lFF@{\,}FF@{\,}FFFFFF@{}}
@@ -64,24 +83,7 @@
         \rowcolor{gray!25}
         halvvokal          & \fon{}{و}{w}  &               &                    &               &              & \fon{j}{ي}{y}   &               &              & \\
 \end{tabular}
-}
 
-    \begin{document}
-
-    \begin{minipage}{.7\linewidth}
-        \textit{\huge Det standardarabiska konsonatinventariet}\\
-
-      \smallskip
-       \normalsize
-       Tabellen bygger på \textit{A Refence Grammar of Modern Standard Arabic}  (Ryding 2005, Cambridge University Press) med förenklad transkription enligt \textit{Alif Baa} (Brustad, Al-Batal \& Al-Tonsi 2010, Georgetown University Press).
-       
-       \smallskip
-       \textcolor{red}{Röda tecken} på nästa sida anger det svenska konsonantinventariet.
-   \end{minipage}
-
-\vfill
-
-\dothetable
 
 \vfill\vfill\null
 \center
@@ -91,13 +93,20 @@
 Av Andras Hallberg \ccby. Dokumentet kan laddas ner från \url{http://andreasmhallberg.github.io/}.
 \end{minipage}
 \vspace{-1cm}
+}
+
+    \begin{document}
+
+\dothetable
+
 
 \clearpage
-
     % show swe
 \renewcommand{\fon}[4][.5em]{\textcolor{red}{\llap{\rlap{#2}\hspace{1em}}}\makebox[#1]{#4}~\textarabic{#3}}
-\null\vfill
+    % ta bort "på nästa sida" 
+\renewcommand{\rodref}{}
+
+
 \dothetable
-\vfill\vfill\null
 
     \end{document}
